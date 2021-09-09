@@ -100,10 +100,7 @@ header nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#destaque aside img {
-  min-width: 625px;
+  flex: none;
 }
 
 /* Principal */
@@ -116,6 +113,7 @@ main {
 
 main .container {
   justify-content: space-between;
+  display: flex;
 }
 
 main .container > * {
@@ -152,12 +150,7 @@ main h2 {
   margin-bottom: 20px;
 }
 
-main aside {
-  flex: 0;
-}
-
 main aside img {
-  min-width: 400px;
   margin: 0 0 0 50px;
   padding: 20px;
 }
@@ -234,7 +227,7 @@ main aside img {
 
 footer .container {
   height: 200px;
-  padding: 50px 0;
+  padding: 50px 25px;
   justify-content: space-between;
   align-items: center;
 }
@@ -273,4 +266,42 @@ footer .container {
 
 #outros > div:last-child a {
   display: block;
+}
+
+/* Responsividade */
+
+@media (max-width: 1200px) {
+  #destaque .container,
+  main .container,
+  #links .container,
+  #video .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main aside img {
+    margin: 0;
+    padding: 0;
+  }
+
+  #links .container a {
+    padding: 25px 25px;
+  }
+
+  #video video {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  header .container, 
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #outros {
+    padding-top: 25px;
+    text-align: center;
+  }
 }
