@@ -1,18 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap");
 
+:root {
+  --largura-maxima: 1280px;
+  --largura-minima: 250px;
+  --cor-fundo: #000;
+  --cor-letra: #fff;
+  --cor-letra-secundaria: #767676;
+  --fonte: "Red Hat Display", sans-serif;
+  --texto-minimo: 0.55rem;
+  --texto-menor: 0.75rem;
+  --texto-padrao: 24px;
+  --texto-maior: 1.5rem;
+  --texto-maximo: 2.7rem;
+}
+
+html {
+  font-size: var(--texto-padrao);
+}
+
 body {
+  min-width: var(--largura-minima);
   margin: 0;
   padding: 0;
-  color: #fff;
-  background: #000;
-  font-family: "Red Hat Display", sans-serif;
-  font-size: 24px;
+  background: var(--cor-fundo);
+  color: var(--cor-letra);
+  font-family: var(--fonte);
 }
 
 h1,
 h2,
 h3,
-p {
+p,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -31,7 +50,7 @@ img {
 }
 
 h1 {
-  font-size: 64px;
+  font-size: var(--texto-maximo);
 }
 
 #pagina {
@@ -40,15 +59,15 @@ h1 {
 }
 
 .container {
+  max-width: var(--largura-maxima);
   margin: 0 auto;
-  max-width: 1280px;
+  padding: 0 1em;
   display: flex;
-  padding: 0 10px;
 }
 
 .invertido {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--cor-letra);
+  color: var(--cor-fundo);
 }
 
 .direita {
@@ -59,14 +78,14 @@ h1 {
 
 header h2 {
   font-weight: normal;
-  color: #767676;
+  font-size: var(--texto-maior);
+  margin: 0.25em 0;
+  color: var(--cor-letra-secundaria);
   flex: 1;
-  font-size: 36px;
-  margin: 10px 0;
 }
 
 header h2 strong {
-  color: #fff;
+  color: var(--cor-letra);
 }
 
 header nav {
@@ -75,14 +94,14 @@ header nav {
 }
 
 header nav a {
-  padding: 0 10px;
-  font-size: 18px;
+  padding: 0 0.25em;
+  font-size: var(--texto-menor);
 }
 
 /* Destaque */
 
 #destaque {
-  margin: 30px 0 50px 0;
+  margin: 1em 0;
 }
 
 #destaque-texto {
@@ -93,7 +112,7 @@ header nav a {
 
 #destaque-texto h1,
 #destaque-texto p {
-  margin: 10px 0;
+  padding: 0.5em 0.2em;
 }
 
 #destaque aside {
@@ -117,27 +136,26 @@ main .container {
 }
 
 main .container > * {
-  margin: 50px 0;
+  margin: 2em 0;
 }
 
 main .container > div {
+  padding: 1em 1em 1em 2em;
+  font-size: var(--texto-menor);
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 18px;
-  padding: 20px;
-  padding-left: 40px;
 }
 
 #topicos {
+  margin: 1em;
+  padding: 0;
   list-style: none;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  margin: 20px 20px;
-  padding: 0px;
 }
 
 #topicos > * {
@@ -145,21 +163,24 @@ main .container > div {
 }
 
 main h2 {
-  font-size: 36px;
+  margin-bottom: 1em;
   font-weight: normal;
-  margin-bottom: 20px;
+  font-size: var(--texto-maior);
+}
+
+main aside {
+  display: flex;
 }
 
 main aside img {
-  margin: 0 0 0 50px;
-  padding: 20px;
+  flex: 1;
 }
 
 /* Tecnologias */
 
 #tecnologias {
-  font-size: 36px;
-  padding: 50px 0;
+  padding: 1.5em 0;
+  font-size: var(--texto-maior);
 }
 
 #tecnologias .container {
@@ -169,14 +190,14 @@ main aside img {
 }
 
 #tecnologias .container > * {
-  max-height: 60px;
-  padding: 0 10px;
+  max-height: 2.5rem;
+  padding: 0 0.5em;
 }
 
 /* Metodologia */
 
 #metodologia {
-  padding: 50px 0;
+  padding: 2em 0;
 }
 
 #metodologia .container {
@@ -185,8 +206,12 @@ main aside img {
 }
 
 #metodologia p {
-  flex: 1;
   text-align: center;
+  flex: 1;
+}
+
+#metodologia img {
+  height: 6em;
 }
 
 /* Links */
@@ -197,51 +222,51 @@ main aside img {
 }
 
 #links .container > * {
-  padding: 50px 25px;
+  padding: 1rem;
 }
 
 /* Vídeo */
 
 #video .container {
+  padding: 1rem;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 50px;
 }
 
 #video ul {
-  flex: 1;
   list-style: none;
   text-align: center;
+  flex: 1;
 }
 
 #video li {
-  padding: 3px;
+  padding: 0.2em;
 }
 
 #video video {
   max-width: 100%;
-  padding-right: 25px;
+  padding: 0 1em;
 }
 
 /* Rodapé */
 
 footer .container {
-  height: 200px;
-  padding: 50px 25px;
+  height: 8em;
+  padding: 1.5em 1em;
   justify-content: space-between;
   align-items: center;
 }
 
 #ermogenes {
+  font-size: var(--texto-menor);
   flex: 1;
   display: flex;
-  font-size: 18px;
 }
 
 #ermogenes img {
-  height: 100px;
-  border-radius: 50px;
-  margin-right: 20px;
+  height: 4rem;
+  margin-right: 1.5em;
+  border-radius: 50%;
 }
 
 #ermogenes > div {
@@ -252,12 +277,13 @@ footer .container {
 
 #outros {
   height: 100%;
-  flex-basis: 250px;
+  flex-basis: 20em;
+  padding: 0.5em;
+  text-align: right;
+  font-size: var(--texto-minimo);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  text-align: right;
-  font-size: 14px;
 }
 
 #outros > p {
@@ -271,6 +297,10 @@ footer .container {
 /* Responsividade */
 
 @media (max-width: 1200px) {
+  :root {
+    --texto-padrao: 20px;
+  }
+
   #destaque .container,
   main .container,
   #links .container,
@@ -279,29 +309,39 @@ footer .container {
     align-items: center;
   }
 
-  main aside img {
-    margin: 0;
-    padding: 0;
-  }
-
-  #links .container a {
-    padding: 25px 25px;
-  }
-
-  #video video {
-    padding: 0 25px;
+  #links .container a:first-child,
+  #links .container a:first-child img {
+    padding-bottom: 0;
+    display: block;
   }
 }
 
 @media (max-width: 600px) {
-  header .container, 
-  footer .container {
+  :root {
+    --texto-padrao: 16px;
+  }
+
+  header .container,
+  footer .container,
+  #topicos {
     flex-direction: column;
     align-items: center;
   }
 
-  #outros {
-    padding-top: 25px;
+  #destaque aside {
+    display: none;
+  }
+
+  #video video {
+    display: none;
+  }
+
+  footer .container {
+    height: 12em;
     text-align: center;
+  }
+
+  #outros {
+    text-align: inherit;
   }
 }
